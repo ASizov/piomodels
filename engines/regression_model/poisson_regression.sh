@@ -14,7 +14,7 @@ pio app new Barcel_App --access-key=$KEY
 ######################
 ##### Import data ####
 ######################
-python import_data.py --access-key $KEY --file sample_data_barcel.csv --group-by fecha
+python import_data.py --access-key $KEY --file sample_data_barcel.csv 
 # Expected result:
 # Importing data...
 # 56 events are imported.
