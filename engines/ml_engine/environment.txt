@@ -1,0 +1,9 @@
+predictionio
+pandas
+xgboost
+sklearn
+xgbfir
+xlrd
+pyspark
+numpy
+sparkts

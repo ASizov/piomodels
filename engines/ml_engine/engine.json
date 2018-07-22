@@ -1,0 +1,20 @@
+{
+  "id": "org.template.regression",
+  "description": "",
+  "engineFactory": "org.template.regression.RegressionEngine",
+  "datasource": {
+    "params" : {
+	"appName": "Barcel_App"
+    }
+  },
+  "algorithms": [
+    {
+      "name": "tree",
+      "params": {
+        "impurity": "variance",
+        "maxDepth":5,
+        "maxBins": 32
+      }
+    }
+  ]
+}
