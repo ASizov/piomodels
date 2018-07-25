@@ -25,7 +25,7 @@ class DecisionTreeRegression(val ap: DecisionTreeParams)
     def toLabelPoint(item: (String, PropertyMap)): LabeledPoint = item match {
       case (_, properties) =>
         val label = properties.get[Double]("label")
-        val vectors = Vectors.dense(properties.get[Double]("fecha"), properties.get[Double]("agencia_id"), properties.get[Double]("canal_id"), properties.get[Double]("producto_id"),properties.get[Double]("Week"),properties.get[Double]("Month"),properties.get[Double]("lag1month"),properties.get[Double]("lag2month"),properties.get[Double]("lag4month"),properties.get[Double]("lag05month"),properties.get[Double]("lag3month"))
+        val vectors = Vectors.dense(properties.get[Double]("fecha"), properties.get[Double]("agencia_id"), properties.get[Double]("canal_id"), properties.get[Double]("producto_id"),properties.get[Double]("Week"),properties.get[Double]("Month"),properties.get[Double]("lag8monthnoagencia"),properties.get[Double]("lag1month"),properties.get[Double]("lag4monthnoagencia"),properties.get[Double]("lag2month"),properties.get[Double]("lag2monthnoagencia"),properties.get[Double]("lag4month"),properties.get[Double]("lag1monthnoagencia"),properties.get[Double]("lag8month"),properties.get[Double]("lag8monthnocanalandnoagencia"),properties.get[Double]("lag4monthnocanalandnoagencia"),properties.get[Double]("lag2monthnocanalandnoagencia"),properties.get[Double]("lag1monthnocanal"),properties.get[Double]("lag1monthnocanalandnoagencia"),properties.get[Double]("lag2monthnocanal"),properties.get[Double]("lag4monthnocanal"),properties.get[Double]("lag8monthnocanal"))
         print(label)
 
         print("\n")
@@ -49,7 +49,7 @@ class DecisionTreeRegression(val ap: DecisionTreeParams)
 
   override def predict(model: DecisionTreeModel, query: Query): PredictedResult = {
     println("1888")
-    val features = Vectors.dense(dateStringToMillis(query.fecha), query.agencia_id, query.canal_id, query.producto_id,query.Month,query.Week,query.lag1month,query.lag2month,query.lag4month,query.lag05month,query.lag3month)
+    val features = Vectors.dense(dateStringToMillis(query.fecha), query.agencia_id, query.canal_id, query.producto_id,query.Month,query.Week,query.lag8monthnocanal,query.lag4monthnocanal,query.lag2monthnocanal,query.lag1monthnocanal,query.lag8monthnocanalandnoagencia,query.lag4monthnocanalandnoagencia,query.lag2monthnocanalandnoagencia,query.lag1monthnocanalandnoagencia,query.lag4monthnoagencia,query.lag2monthnoagencia,query.lag1monthnoagencia,query.lag8monthnoagencia,query.lag1month,query.lag2month,query.lag4month,query.lag8month)
     print("\n")
     println(features)
 

@@ -32,8 +32,7 @@ class DataSource(ep: EmptyParams)
 	    lag1month = properties.get[Int]("lag1month"),
 	    lag2month = properties.get[Int]("lag2month"),
 		lag4month = properties.get[Int]("lag4month"),
-		lag05month = properties.get[Int]("lag05month"),
-		lag3month = properties.get[Int]("lag3month"),
+		lag8month = properties.get[Int]("lag8month"),
 		Week = properties.get[Int]("Week"),
 		Month = properties.get[Int]("Month")			 
 
@@ -53,7 +52,7 @@ class DataSource(ep: EmptyParams)
     val grades = PEventStore.aggregateProperties(
       appName = "Barcel_App",
       entityType = "user",
-      required = Some(List("fecha", "agencia_id", "canal_id", "producto_id", "venta_uni","lag1month","lag2month","lag4month","lag3month","lag05month","Week","Month"))
+      required = Some(List("fecha", "agencia_id", "canal_id", "producto_id", "venta_uni","lag1month","lag2month","lag4month","lag8month","Week","Month"))
     )(sc)
     print("propertyMap")
 
@@ -67,8 +66,7 @@ class DataSource(ep: EmptyParams)
 		"lag1month" ->   JDouble(properties.get[Double]("lag1month")),
 		"lag2month" ->   JDouble(properties.get[Double]("lag2month")),
 		"lag4month" ->   JDouble(properties.get[Double]("lag4month")),
-		"lag3month" ->   JDouble(properties.get[Double]("lag3month")),
-		"lag05month" ->   JDouble(properties.get[Double]("lag05month")),
+		"lag8month" ->   JDouble(properties.get[Double]("lag8month")),
 		"Week" ->   JDouble(properties.get[Double]("Week")),
 		"Month" ->   JDouble(properties.get[Double]("Month")),			
            "label" -> JDouble(properties.get[Double]("venta_uni"))

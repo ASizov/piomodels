@@ -28,14 +28,7 @@ class DataSource(ep: EmptyParams)
             fecha = properties.get[String]("fecha"),
             agencia_id = properties.get[Int]("agencia_id"),
             canal_id = properties.get[Int]("canal_id"),
-            producto_id = properties.get[Int]("producto_id"),
-	    lag1month = properties.get[Int]("lag1month"),
-	    lag2month = properties.get[Int]("lag2month"),
-		lag4month = properties.get[Int]("lag4month"),
-		lag05month = properties.get[Int]("lag05month"),
-		lag3month = properties.get[Int]("lag3month"),
-		Week = properties.get[Int]("Week"),
-		Month = properties.get[Int]("Month")			 
+            producto_id = properties.get[Int]("producto_id")			 
 
         ) -> ActualResult(properties.get[Double]("label"))
     }
@@ -53,7 +46,7 @@ class DataSource(ep: EmptyParams)
     val grades = PEventStore.aggregateProperties(
       appName = "Barcel_App",
       entityType = "user",
-      required = Some(List("fecha", "agencia_id", "canal_id", "producto_id", "venta_uni","lag1month","lag2month","lag4month","lag3month","lag05month","Week","Month"))
+      required = Some(List("fecha", "agencia_id", "canal_id", "producto_id", "venta_uni"))
     )(sc)
     print("propertyMap")
 
@@ -63,14 +56,7 @@ class DataSource(ep: EmptyParams)
           "fecha" -> JDouble(dateStringToMillis(properties.get[String]("fecha"))),
           "agencia_id" ->   JDouble(properties.get[Double]("agencia_id")),
           "canal_id" ->   JDouble(properties.get[Double]("canal_id")),
-          "producto_id" ->   JDouble(properties.get[Double]("producto_id")),
-		"lag1month" ->   JDouble(properties.get[Double]("lag1month")),
-		"lag2month" ->   JDouble(properties.get[Double]("lag2month")),
-		"lag4month" ->   JDouble(properties.get[Double]("lag4month")),
-		"lag3month" ->   JDouble(properties.get[Double]("lag3month")),
-		"lag05month" ->   JDouble(properties.get[Double]("lag05month")),
-		"Week" ->   JDouble(properties.get[Double]("Week")),
-		"Month" ->   JDouble(properties.get[Double]("Month")),			
+          "producto_id" ->   JDouble(properties.get[Double]("producto_id")),			
            "label" -> JDouble(properties.get[Double]("venta_uni"))
         )
 

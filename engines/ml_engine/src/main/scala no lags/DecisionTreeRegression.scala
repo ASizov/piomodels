@@ -25,7 +25,7 @@ class DecisionTreeRegression(val ap: DecisionTreeParams)
     def toLabelPoint(item: (String, PropertyMap)): LabeledPoint = item match {
       case (_, properties) =>
         val label = properties.get[Double]("label")
-        val vectors = Vectors.dense(properties.get[Double]("fecha"), properties.get[Double]("agencia_id"), properties.get[Double]("canal_id"), properties.get[Double]("producto_id"),properties.get[Double]("Week"),properties.get[Double]("Month"),properties.get[Double]("lag1month"),properties.get[Double]("lag2month"),properties.get[Double]("lag4month"),properties.get[Double]("lag05month"),properties.get[Double]("lag3month"))
+        val vectors = Vectors.dense(properties.get[Double]("fecha"), properties.get[Double]("agencia_id"), properties.get[Double]("canal_id"), properties.get[Double]("producto_id"))
         print(label)
 
         print("\n")
@@ -49,7 +49,7 @@ class DecisionTreeRegression(val ap: DecisionTreeParams)
 
   override def predict(model: DecisionTreeModel, query: Query): PredictedResult = {
     println("1888")
-    val features = Vectors.dense(dateStringToMillis(query.fecha), query.agencia_id, query.canal_id, query.producto_id,query.Month,query.Week,query.lag1month,query.lag2month,query.lag4month,query.lag05month,query.lag3month)
+    val features = Vectors.dense(dateStringToMillis(query.fecha), query.agencia_id, query.canal_id, query.producto_id)
     print("\n")
     println(features)
 
