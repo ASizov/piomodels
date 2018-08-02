@@ -3,6 +3,7 @@
 3 - 1,2,4,8 month lags(511.73875233756326 - MAE,1968560.013164348 - RMSE)
 4 - 0.5,1,2,3,4 month lags(381.02948690976757 - MAE,1617955.2483923258 - RMSE)
 6 - Popularity of each kind, prices(~373.3807009514467 - MAE,1520236.0213096293 - RMSE) 
+7 - Random Forest ("numClasses": 4,"numTrees": 40,"featureSubsetStrategy": "auto","impurity": "variance","maxDepth": 4,"maxBins": 40)
 
 --------------------------
 Random Forests(MLLIB) 
