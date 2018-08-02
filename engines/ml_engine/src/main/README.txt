@@ -7,10 +7,10 @@
 4,"numTrees": 40,"featureSubsetStrategy": 
 "auto",
 "impurity": "variance",
-"maxDepth": 4,
+"maxDepth": 6,
 "maxBins": 40)
-1551467.317566129  - RMSE
-367.82596434719204  - MAE
+1486059.0530157394  - RMSE
+356.7977332096079  - MAE
 --------------------------
 Random Forests(MLLIB) 
 MSE = 739356.064922 
