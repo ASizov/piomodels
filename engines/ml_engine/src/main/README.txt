@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------------------
-scala - more features (685821.0192798756 - RMSE 320.7826181984537 - MAE)
+scala - more features (320.7826181984537 - MAE,685821.0192798756 - RMSE)
 "numClasses": 40,
 "numTrees": 41,
 "featureSubsetStrategy": "auto",
