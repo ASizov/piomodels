@@ -25,7 +25,7 @@ class DecisionTreeRegression(val ap: DecisionTreeParams)
     def toLabelPoint(item: (String, PropertyMap)): LabeledPoint = item match {
       case (_, properties) =>
         val label = properties.get[Double]("label")
-        val vectors = Vectors.dense(properties.get[Double]("fecha"), properties.get[Double]("agencia_id"), properties.get[Double]("canal_id"), properties.get[Double]("producto_id"),properties.get[Double]("Week"),properties.get[Double]("Month"),properties.get[Double]("lag1month"),properties.get[Double]("lag05month"),properties.get[Double]("fechaLab"),properties.get[Double]("season"),properties.get[Double]("isholiday"),properties.get[Double]("isholidayyesterday"),properties.get[Double]("isholidaytomorrow"),properties.get[Double]("price"),properties.get[Double]("lag05rollavg2"),properties.get[Double]("lag05rollavg3"),properties.get[Double]("lag2rollavg3"),properties.get[Double]("lag05ewma3"),properties.get[Double]("lag05ewma8"),properties.get[Double]("lag2ewma3"),properties.get[Double]("lag4ewma3"),properties.get[Double]("lag05ewma3lag05ewma8"),properties.get[Double]("lag2ewma3lag4ewma3"))
+        val vectors = Vectors.dense(properties.get[Double]("fecha"), properties.get[Double]("agencia_id"), properties.get[Double]("canal_id"), properties.get[Double]("producto_id"),properties.get[Double]("Week"),properties.get[Double]("Month"),properties.get[Double]("lag1month"),properties.get[Double]("lag2month"),properties.get[Double]("lag4month"),properties.get[Double]("lag05month"),properties.get[Double]("lag3month"),properties.get[Double]("fechaLab"),properties.get[Double]("season"),properties.get[Double]("isholiday"),properties.get[Double]("isholidayyesterday"),properties.get[Double]("isholidaytomorrow"),properties.get[Double]("price"),properties.get[Double]("popularity"))
         print(label)
 
         print("\n")
@@ -49,7 +49,7 @@ class DecisionTreeRegression(val ap: DecisionTreeParams)
 
   override def predict(model: DecisionTreeModel, query: Query): PredictedResult = {
     println("1888")
-    val features = Vectors.dense(dateStringToMillis(query.fecha), query.agencia_id, query.canal_id, query.producto_id,query.Month,query.Week,query.lag1month,query.lag05month,query.fechaLab,query.season,query.isholiday,query.isholidayyesterday,query.isholidaytomorrow,query.price,query.lag05rollavg2,query.lag05rollavg3,query.lag2rollavg3,query.lag05ewma3,query.lag05ewma8,query.lag2ewma3,query.lag4ewma3,query.lag05ewma3lag05ewma8,query.lag2ewma3lag4ewma3)
+    val features = Vectors.dense(dateStringToMillis(query.fecha), query.agencia_id, query.canal_id, query.producto_id,query.Month,query.Week,query.lag1month,query.lag2month,query.lag4month,query.lag05month,query.lag3month,query.fechaLab,query.season,query.isholiday,query.isholidayyesterday,query.isholidaytomorrow,query.price,query.popularity)
     print("\n")
     println(features)
 

@@ -1,0 +1,86 @@
+2018-08-07 15:52:03,345 CRIT Supervisor running as root (no user in config file)
+2018-08-07 15:52:03,347 INFO supervisord started with pid 1
+2018-08-07 15:52:04,349 INFO spawned: 'service_creator' with pid 10
+2018-08-07 15:52:04,351 INFO spawned: 'pyro4' with pid 11
+2018-08-07 15:52:05,353 INFO success: service_creator entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-07 15:52:05,353 INFO success: pyro4 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-07 22:39:48,711 WARN received SIGTERM indicating exit request
+2018-08-07 22:39:48,712 INFO waiting for service_creator, pyro4 to die
+2018-08-07 22:39:48,714 INFO stopped: pyro4 (terminated by SIGTERM)
+2018-08-07 22:39:48,720 INFO stopped: service_creator (terminated by SIGTERM)
+2018-08-07 22:43:21,911 CRIT Supervisor running as root (no user in config file)
+2018-08-07 22:43:21,913 INFO supervisord started with pid 1
+2018-08-07 22:43:22,915 INFO spawned: 'service_creator' with pid 10
+2018-08-07 22:43:22,918 INFO spawned: 'pyro4' with pid 11
+2018-08-07 22:43:23,920 INFO success: service_creator entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-07 22:43:23,920 INFO success: pyro4 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-07 22:48:53,814 WARN received SIGTERM indicating exit request
+2018-08-07 22:48:53,815 INFO waiting for service_creator, pyro4 to die
+2018-08-07 22:48:53,816 INFO stopped: pyro4 (terminated by SIGTERM)
+2018-08-07 22:48:54,821 INFO stopped: service_creator (terminated by SIGTERM)
+2018-08-07 22:51:07,550 CRIT Supervisor running as root (no user in config file)
+2018-08-07 22:51:07,553 INFO supervisord started with pid 1
+2018-08-07 22:51:08,556 INFO spawned: 'service_creator' with pid 10
+2018-08-07 22:51:08,557 INFO spawned: 'pyro4' with pid 11
+2018-08-07 22:51:09,558 INFO success: service_creator entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-07 22:51:09,559 INFO success: pyro4 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-07 22:56:45,218 WARN received SIGTERM indicating exit request
+2018-08-07 22:56:45,218 INFO waiting for service_creator, pyro4 to die
+2018-08-07 22:56:45,220 INFO stopped: pyro4 (terminated by SIGTERM)
+2018-08-07 22:56:45,227 INFO stopped: service_creator (terminated by SIGTERM)
+2018-08-08 20:19:57,132 CRIT Supervisor running as root (no user in config file)
+2018-08-08 20:19:57,136 INFO supervisord started with pid 1
+2018-08-08 20:19:58,138 INFO spawned: 'service_creator' with pid 11
+2018-08-08 20:19:58,141 INFO spawned: 'pyro4' with pid 12
+2018-08-08 20:19:59,143 INFO success: service_creator entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-08 20:19:59,143 INFO success: pyro4 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-08 22:07:52,578 WARN received SIGTERM indicating exit request
+2018-08-08 22:07:52,578 INFO waiting for service_creator, pyro4 to die
+2018-08-08 22:07:52,581 INFO stopped: pyro4 (terminated by SIGTERM)
+2018-08-08 22:07:53,590 INFO stopped: service_creator (terminated by SIGTERM)
+2018-08-09 09:33:53,831 CRIT Supervisor running as root (no user in config file)
+2018-08-09 09:33:53,835 INFO supervisord started with pid 1
+2018-08-09 09:33:54,837 INFO spawned: 'service_creator' with pid 10
+2018-08-09 09:33:54,839 INFO spawned: 'pyro4' with pid 11
+2018-08-09 09:33:55,841 INFO success: service_creator entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-09 09:33:55,841 INFO success: pyro4 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-09 11:47:07,239 WARN received SIGTERM indicating exit request
+2018-08-09 11:47:07,241 INFO waiting for service_creator, pyro4 to die
+2018-08-09 11:47:07,242 INFO stopped: pyro4 (terminated by SIGTERM)
+2018-08-09 11:47:07,249 INFO stopped: service_creator (terminated by SIGTERM)
+2018-08-09 13:50:19,979 CRIT Supervisor running as root (no user in config file)
+2018-08-09 13:50:19,983 INFO supervisord started with pid 1
+2018-08-09 13:50:20,985 INFO spawned: 'service_creator' with pid 10
+2018-08-09 13:50:20,988 INFO spawned: 'pyro4' with pid 11
+2018-08-09 13:50:21,990 INFO success: service_creator entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-09 13:50:21,990 INFO success: pyro4 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-09 14:10:36,436 WARN received SIGTERM indicating exit request
+2018-08-09 14:10:36,437 INFO waiting for service_creator, pyro4 to die
+2018-08-09 14:10:36,440 INFO stopped: pyro4 (terminated by SIGTERM)
+2018-08-09 14:10:37,449 INFO stopped: service_creator (terminated by SIGTERM)
+2018-08-09 14:11:32,777 CRIT Supervisor running as root (no user in config file)
+2018-08-09 14:11:32,781 INFO supervisord started with pid 1
+2018-08-09 14:11:33,784 INFO spawned: 'service_creator' with pid 11
+2018-08-09 14:11:33,787 INFO spawned: 'pyro4' with pid 12
+2018-08-09 14:11:34,789 INFO success: service_creator entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-09 14:11:34,789 INFO success: pyro4 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-09 15:16:09,476 WARN received SIGTERM indicating exit request
+2018-08-09 15:16:09,478 INFO waiting for service_creator, pyro4 to die
+2018-08-09 15:16:09,478 INFO stopped: pyro4 (terminated by SIGTERM)
+2018-08-09 15:16:10,488 INFO stopped: service_creator (terminated by SIGTERM)
+2018-08-09 17:01:11,037 CRIT Supervisor running as root (no user in config file)
+2018-08-09 17:01:11,040 INFO supervisord started with pid 1
+2018-08-09 17:01:12,043 INFO spawned: 'service_creator' with pid 11
+2018-08-09 17:01:12,045 INFO spawned: 'pyro4' with pid 12
+2018-08-09 17:01:13,046 INFO success: service_creator entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-09 17:01:13,047 INFO success: pyro4 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-09 22:57:45,076 WARN received SIGTERM indicating exit request
+2018-08-09 22:57:45,079 INFO waiting for service_creator, pyro4 to die
+2018-08-09 22:57:45,081 INFO stopped: pyro4 (terminated by SIGTERM)
+2018-08-09 22:57:45,084 INFO stopped: service_creator (terminated by SIGTERM)
+2018-08-10 18:55:56,675 CRIT Supervisor running as root (no user in config file)
+2018-08-10 18:55:56,679 INFO supervisord started with pid 1
+2018-08-10 18:55:57,683 INFO spawned: 'service_creator' with pid 12
+2018-08-10 18:55:57,686 INFO spawned: 'pyro4' with pid 13
+2018-08-10 18:55:58,688 INFO success: service_creator entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-10 18:55:58,688 INFO success: pyro4 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)

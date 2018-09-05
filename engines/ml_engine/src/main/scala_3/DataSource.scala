@@ -30,24 +30,11 @@ class DataSource(ep: EmptyParams)
             canal_id = properties.get[Int]("canal_id"),
             producto_id = properties.get[Int]("producto_id"),
 	    lag1month = properties.get[Int]("lag1month"),
-		lag05month = properties.get[Int]("lag05month"),
+	    lag2month = properties.get[Int]("lag2month"),
+		lag4month = properties.get[Int]("lag4month"),
+		lag8month = properties.get[Int]("lag8month"),
 		Week = properties.get[Int]("Week"),
-		fechaLab = properties.get[Int]("fechaLab"),
-		Month = properties.get[Int]("Month"),
-		season = properties.get[Int]("season"),
-		isholiday = properties.get[Int]("isholiday"),
-		isholidayyesterday = properties.get[Int]("isholidayyesterday"),
-		isholidaytomorrow = properties.get[Int]("isholidaytomorrow"),
-		price = properties.get[Int]("price"),
-		lag05rollavg2 = properties.get[Int]("lag05rollavg2"),
-		lag05rollavg3 = properties.get[Int]("lag05rollavg3"),	
-		lag2rollavg3 = properties.get[Int]("lag2rollavg3"),	
-		lag05ewma3 = properties.get[Int]("lag05ewma3"),	
-		lag05ewma8 = properties.get[Int]("lag05ewma8"),
-		lag2ewma3 = properties.get[Int]("lag2ewma3"),	
-		lag4ewma3 = properties.get[Int]("lag4ewma3"),	
-		lag05ewma3lag05ewma8 = properties.get[Int]("lag05ewma3lag05ewma8"),
-		lag2ewma3lag4ewma3 = properties.get[Int]("lag2ewma3lag4ewma3")		 
+		Month = properties.get[Int]("Month")			 
 
         ) -> ActualResult(properties.get[Double]("label"))
     }
@@ -65,8 +52,7 @@ class DataSource(ep: EmptyParams)
     val grades = PEventStore.aggregateProperties(
       appName = "Barcel_App",
       entityType = "user",
-      required = Some(List("fecha", "agencia_id", "canal_id", "producto_id", "venta_uni","lag1month","lag05month","Week","Month","fechaLab","season","isholiday","isholidayyesterday","isholidaytomorrow","price",
-"lag05rollavg2","lag05rollavg3","lag2rollavg3","lag05ewma3","lag05ewma8","lag2ewma3","lag05ewma3lag05ewma8","lag2ewma3lag4ewma3"))
+      required = Some(List("fecha", "agencia_id", "canal_id", "producto_id", "venta_uni","lag1month","lag2month","lag4month","lag8month","Week","Month"))
     )(sc)
     print("propertyMap")
 
@@ -78,24 +64,11 @@ class DataSource(ep: EmptyParams)
           "canal_id" ->   JDouble(properties.get[Double]("canal_id")),
           "producto_id" ->   JDouble(properties.get[Double]("producto_id")),
 		"lag1month" ->   JDouble(properties.get[Double]("lag1month")),
-		"lag05month" ->   JDouble(properties.get[Double]("lag05month")),
+		"lag2month" ->   JDouble(properties.get[Double]("lag2month")),
+		"lag4month" ->   JDouble(properties.get[Double]("lag4month")),
+		"lag8month" ->   JDouble(properties.get[Double]("lag8month")),
 		"Week" ->   JDouble(properties.get[Double]("Week")),
-		"Month" ->   JDouble(properties.get[Double]("Month")),
-		"fechaLab" ->   JDouble(properties.get[Double]("fechaLab")),
-		"price" ->   JDouble(properties.get[Double]("price")),
-		"isholidaytomorrow" ->   JDouble(properties.get[Double]("isholidaytomorrow")),
-		"isholidayyesterday" ->   JDouble(properties.get[Double]("isholidayyesterday")),
-		"isholiday" ->   JDouble(properties.get[Double]("isholiday")),
-		"lag05rollavg2" ->   JDouble(properties.get[Double]("lag05rollavg2")),
-		"lag05rollavg3" ->   JDouble(properties.get[Double]("lag05rollavg3")),
-		"lag2rollavg3" ->   JDouble(properties.get[Double]("lag2rollavg3")),
-		"lag05ewma3" ->   JDouble(properties.get[Double]("lag05ewma3")),
-		"lag05ewma8" ->   JDouble(properties.get[Double]("lag05ewma8")),
-		"lag2ewma3" ->   JDouble(properties.get[Double]("lag2ewma3")),
-		"lag4ewma3" ->   JDouble(properties.get[Double]("lag4ewma3")),
-		"lag05ewma3lag05ewma8" ->   JDouble(properties.get[Double]("lag05ewma3lag05ewma8")),
-		"lag2ewma3lag4ewma3" ->   JDouble(properties.get[Double]("lag2ewma3lag4ewma3")),
-		"season" ->   JDouble(properties.get[Double]("season")),	
+		"Month" ->   JDouble(properties.get[Double]("Month")),			
            "label" -> JDouble(properties.get[Double]("venta_uni"))
         )
 

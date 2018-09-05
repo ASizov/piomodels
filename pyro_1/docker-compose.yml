@@ -1,0 +1,8 @@
+version: '2.3'
+services:
+  pyro:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/pyro-algorithms-orax

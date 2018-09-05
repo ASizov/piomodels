@@ -6,6 +6,10 @@ import org.apache.spark.SparkContext
 import org.apache.spark.mllib.linalg.Vectors
 import org.apache.spark.mllib.regression.{LabeledPoint}
 import org.apache.spark.rdd.RDD
+
+import org.apache.spark.mllib.regression.LinearRegressionModel
+import org.apache.spark.mllib.regression.LinearRegressionWithSGD
+
 import org.apache.predictionio.controller.Params
 import org.apache.predictionio.data.storage.PropertyMap
 
@@ -14,14 +18,14 @@ import org.apache.spark.mllib.tree.model.DecisionTreeModel
 import org.apache.spark.mllib.util.MLUtils
 import org.joda.time.format.{ DateTimeFormat, DateTimeFormatter }
 
-case class DecisionTreeParams(impurity: String, maxDepth: Int, maxBins: Int) extends Params
+case class LinearParams(step: Int, iterations: Int, regParam: Float,miniBatchFraction:Float) extends Params
 
-class DecisionTreeRegression(val ap: DecisionTreeParams)
-  extends P2LAlgorithm[PreparedData, DecisionTreeModel, Query, PredictedResult] {
+class LinearRegression(val ap: LinearParams)
+  extends P2LAlgorithm[PreparedData, LinearRegressionModel, Query, PredictedResult] {
 
   @transient lazy val logger: Logger = Logger[this.type]
 
-  override def train(sc: SparkContext, data: PreparedData): DecisionTreeModel = {
+  override def train(sc: SparkContext, data: PreparedData): LinearRegressionModel = {
     def toLabelPoint(item: (String, PropertyMap)): LabeledPoint = item match {
       case (_, properties) =>
         val label = properties.get[Double]("label")
@@ -37,7 +41,7 @@ class DecisionTreeRegression(val ap: DecisionTreeParams)
     print(labeledPoints)
     val categoricalFeaturesInfo = Map[Int, Int]()
     print(categoricalFeaturesInfo)
-    DecisionTree.trainRegressor(labeledPoints, categoricalFeaturesInfo, ap.impurity, ap.maxDepth, ap.maxBins)
+    LinearRegressionWithSGD.train(labeledPoints, ap.iterations, ap.step,ap.miniBatchFraction )
   }
 
   object MyUtils{
@@ -47,7 +51,7 @@ class DecisionTreeRegression(val ap: DecisionTreeParams)
 
   def dateStringToMillis(dateStr: String) = dtFormatter.parseDateTime(dateStr).getMillis()
 
-  override def predict(model: DecisionTreeModel, query: Query): PredictedResult = {
+  override def predict(model: LinearRegressionModel, query: Query): PredictedResult = {
     println("1888")
     val features = Vectors.dense(dateStringToMillis(query.fecha), query.agencia_id, query.canal_id, query.producto_id,query.Month,query.Week,query.lag1month,query.lag05month,query.fechaLab,query.season,query.isholiday,query.isholidayyesterday,query.isholidaytomorrow,query.price,query.lag05rollavg2,query.lag05rollavg3,query.lag2rollavg3,query.lag05ewma3,query.lag05ewma8,query.lag2ewma3,query.lag4ewma3,query.lag05ewma3lag05ewma8,query.lag2ewma3lag4ewma3)
     print("\n")
